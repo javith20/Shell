@@ -26,11 +26,24 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    adminstring.cpp
+    ls.cpp \
+    CutterCommand.cpp \
+    listaenlazada.cpp \
+    cd.cpp \
+    mkdir.cpp \
+    rm.cpp \
+    cp.cpp \
+    date.cpp
 
 HEADERS += \
         mainwindow.h \
-    adminstring.h
+    ls.h \
+    CutterCommand.h \
+    cd.h \
+    mkdir.h \
+    rm.h \
+    cp.h \
+    date.h
 
 FORMS += \
         mainwindow.ui

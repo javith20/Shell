@@ -1,0 +1,12 @@
+INPUT(
+./debug/main.o
+./debug/mainwindow.o
+./debug/ls.o
+./debug/CutterCommand.o
+./debug/cd.o
+./debug/mkdir.o
+./debug/rm.o
+./debug/cp.o
+./debug/date.o
+./debug/moc_mainwindow.o
+);

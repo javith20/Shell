@@ -56,7 +56,11 @@
       <height>191</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout"/>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QColumnView" name="columnView"/>
+     </item>
+    </layout>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
