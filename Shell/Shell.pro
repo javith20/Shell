@@ -33,7 +33,9 @@ SOURCES += \
     mkdir.cpp \
     rm.cpp \
     cp.cpp \
-    date.cpp
+    date.cpp \
+    fileeditor.cpp \
+    user.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +45,9 @@ HEADERS += \
     mkdir.h \
     rm.h \
     cp.h \
-    date.h
+    date.h \
+    fileeditor.h \
+    user.h
 
 FORMS += \
         mainwindow.ui

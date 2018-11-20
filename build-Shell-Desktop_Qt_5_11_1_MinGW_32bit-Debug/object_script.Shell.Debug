@@ -8,5 +8,6 @@ INPUT(
 ./debug/rm.o
 ./debug/cp.o
 ./debug/date.o
+./debug/fileeditor.o
 ./debug/moc_mainwindow.o
 );

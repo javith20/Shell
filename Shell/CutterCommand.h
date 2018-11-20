@@ -10,6 +10,8 @@
 #include "rm.h"
 #include "cp.h"
 #include "date.h"
+#include "fileeditor.h"
+
 using namespace std;
 class CutterCommand
 {
@@ -42,7 +44,7 @@ private:
     rmCommand rm;
     CpCommand cp;
     dateCommand date;
-
+    fileEditor file;
 };
 
 #endif // ADMINSTRING_H

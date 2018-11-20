@@ -77,21 +77,21 @@ string CutterCommand::selectCommand()
     string str;
     ListaEnlazada<string> listOut;
     listOut.insertarCabeza("Comando no encontrado");
-    if(programStr =="ls")
+    if(programStr == "ls")
     {
         if(this->listRouteStr.getCabeza())
             listOut=this->ls.getFiles(this->listRouteStr.getPos(0)->getElemento());
         else
             listOut=this->ls.getFiles(this->mainRouteStr);
     }
-    if(programStr =="mkdir")
+    if(programStr == "mkdir")
     {
         if(this->listRouteStr.getCabeza())
             listOut=this->mkdir.createDir(this->listRouteStr.getPos(0)->getElemento());
         else
             listOut=this->mkdir.createDir(this->mainRouteStr);
     }
-    if(programStr =="rm")
+    if(programStr == "rm")
     {
         if(this->listRouteStr.getCabeza())
             listOut=this->rm.removeDir(this->listRouteStr.getPos(0)->getElemento());

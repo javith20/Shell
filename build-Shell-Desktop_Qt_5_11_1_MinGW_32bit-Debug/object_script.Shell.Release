@@ -8,5 +8,6 @@ INPUT(
 ./release/rm.o
 ./release/cp.o
 ./release/date.o
+./release/fileeditor.o
 ./release/moc_mainwindow.o
 );
