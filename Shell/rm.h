@@ -10,6 +10,7 @@ class rmCommand
 public:
     rmCommand();
     ListaEnlazada<string> removeDir(string ruta);
+    ListaEnlazada<string> removeFile(string ruta);
 };
 
 #endif // MKDIR_H

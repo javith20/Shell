@@ -59,13 +59,13 @@ void CutterCommand::OrganizeCommandData()
 }
 string CutterCommand::routeGenerate(string routeStr)
 {
-    if(ls.isDir(routeStr))
+    if(ls.isDir(routeStr) || ls.isFile(routeStr))
     {
        return routeStr;
     }
     else{
         routeStr = this->mainRouteStr +routeStr;
-        if(ls.isDir(routeStr))
+        if(ls.isDir(routeStr) || ls.isFile(routeStr))
             return  routeStr;
         else{
          return("0");
@@ -113,10 +113,17 @@ string CutterCommand::selectCommand()
     }
     if(programStr == "rm")
     {
-        if(this->listRouteStr.getCabeza())
-            listOut=this->rm.removeDir(this->listRouteStr.getPos(0)->getElemento());
-        else
-            listOut=this->rm.removeDir(this->mainRouteStr);
+        string routeStr = routeGenerate ( this->getListParameters().getPos(1)->getElemento());
+        if(routeStr !="0" )
+        {
+            cout<< routeStr << endl;
+                if(ls.isFile(routeStr)==0)
+                listOut=this->rm.removeDir(routeStr);
+                else
+                listOut= this->rm.removeFile(routeStr);
+        }
+
+
     }
     if(programStr == "clear")
     {
@@ -131,8 +138,11 @@ string CutterCommand::selectCommand()
         listOut.EliminarPos(0);
         if(getListParameters().getPos(1))
         {
-            string routeStr = this->getListParameters().getPos(1)->getElemento();
-            if()
+            string routeStr = routeGenerate ( this->getListParameters().getPos(1)->getElemento());
+            if(routeStr !="0")
+                this->mainRouteStr = routeStr;
+            else
+                listOut.insertarFinal("Error de ruta");
         }else{
             this->mainRouteStr = "C:/";
 
@@ -140,26 +150,14 @@ string CutterCommand::selectCommand()
     }
     if(programStr == "cp"){
         listOut.EliminarPos(0);
-        if(getListParameters().getPos(1))
-        {
-        string routeStr = this->getListParameters().getPos(1)->getElemento();
-        if(ls.isDir(routeStr))
-        {
-           this->mainRouteStr = routeStr;
-        }
-        else{
-            routeStr = this->mainRouteStr +routeStr;
-            if(ls.isDir(routeStr))
-                this->mainRouteStr = routeStr;
-            else{
+        string routeCopyStr = ( this->getListParameters().getPos(1)->getElemento());
+        string routeFateStr =  ( this->getListParameters().getPos(2)->getElemento());
+        cout << routeCopyStr << endl;
+        cout << routeFateStr << endl;
 
-            listOut.insertarFinal("No existe la ruta");
-            }
-        }
-        }else{
-            this->mainRouteStr = "C:/";
-        }
-        listOut = cp.copyFile("C:/","");
+        cp.copyFile(routeCopyStr,routeFateStr);
+
+
     }
     if(programStr == "date")
     {

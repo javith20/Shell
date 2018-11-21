@@ -38,7 +38,6 @@ bool lsCommand::isFile(string route)
 }
 bool lsCommand::isDir(string route)
 {
-
     DIR *dir;
     struct dirent *file;
     dir = opendir(route.c_str());
