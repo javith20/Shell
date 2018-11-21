@@ -9,5 +9,7 @@ INPUT(
 ./debug/cp.o
 ./debug/date.o
 ./debug/fileeditor.o
+./debug/user.o
+./debug/fileexists.o
 ./debug/moc_mainwindow.o
 );

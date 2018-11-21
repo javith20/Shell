@@ -27,6 +27,7 @@ public:
     string getUserStr();
     string getGroupStr();
     string getCompleteDataShell();
+    string routeGenerate(string );
     ListaEnlazada<string> getHistoryStr();
     ListaEnlazada<string> getListParameters();
 

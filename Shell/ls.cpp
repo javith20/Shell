@@ -16,7 +16,7 @@ ListaEnlazada<string> lsCommand::getFiles(string directory)
 
     while(file = readdir(dir))
     {
-        cout<< file->d_name<<endl;
+
         string filename =file->d_name;
         if(filename !=".")
             listFiles.insertarFinal(filename);
@@ -26,4 +26,23 @@ ListaEnlazada<string> lsCommand::getFiles(string directory)
     }
     closedir(dir);
     return listFiles;
+}
+bool lsCommand::isFile(string route)
+{
+    FILE *file;
+
+    file = fopen(route.c_str(),"rb");
+    if(file == NULL)
+        return false;
+    return true;
+}
+bool lsCommand::isDir(string route)
+{
+
+    DIR *dir;
+    struct dirent *file;
+    dir = opendir(route.c_str());
+    if(dir == NULL)
+       return false;
+    return true;
 }

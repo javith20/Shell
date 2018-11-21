@@ -10,7 +10,7 @@ class CpCommand
 {
 public:
     CpCommand();
-    ListaEnlazada<string> copyFile(string ruta);
+    ListaEnlazada<string> copyFile(string rutaInicio, string rutaFin);
 
 };
 

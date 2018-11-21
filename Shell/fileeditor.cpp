@@ -3,10 +3,9 @@ fileEditor::fileEditor()
 {
 
 }
-int fileEditor::createFile(string name, string text)
+int fileEditor::createFile(string name)
 {
     ofstream fs(name);
-    fs << text << endl;
     fs.close();
     return 0;
 }
@@ -70,7 +69,7 @@ void fileEditor::presentaMenuGeneral() {
       break;
     case 1:
       {
-        createFile("","");
+        createFile("");
       }
     case 2:
       {

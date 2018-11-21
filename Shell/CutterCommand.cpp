@@ -57,6 +57,21 @@ void CutterCommand::OrganizeCommandData()
         }
     }
 }
+string CutterCommand::routeGenerate(string routeStr)
+{
+    if(ls.isDir(routeStr))
+    {
+       return routeStr;
+    }
+    else{
+        routeStr = this->mainRouteStr +routeStr;
+        if(ls.isDir(routeStr))
+            return  routeStr;
+        else{
+         return("0");
+        }
+    }
+}
 string CutterCommand::cutLastCommand(string completeStr)
 {   string invlastCommand;
     string lastCommand;
@@ -77,21 +92,26 @@ string CutterCommand::selectCommand()
     string str;
     ListaEnlazada<string> listOut;
     listOut.insertarCabeza("Comando no encontrado");
-    if(programStr =="ls")
+    if(programStr == "ls")
     {
+
         if(this->listRouteStr.getCabeza())
+        {
             listOut=this->ls.getFiles(this->listRouteStr.getPos(0)->getElemento());
+        }
         else
+        {
             listOut=this->ls.getFiles(this->mainRouteStr);
+        }
     }
-    if(programStr =="mkdir")
+    if(programStr == "mkdir")
     {
         if(this->listRouteStr.getCabeza())
             listOut=this->mkdir.createDir(this->listRouteStr.getPos(0)->getElemento());
         else
             listOut=this->mkdir.createDir(this->mainRouteStr);
     }
-    if(programStr =="rm")
+    if(programStr == "rm")
     {
         if(this->listRouteStr.getCabeza())
             listOut=this->rm.removeDir(this->listRouteStr.getPos(0)->getElemento());
@@ -108,22 +128,38 @@ string CutterCommand::selectCommand()
     }
     if(programStr == "cd")
     {
-        string routeStr = this->getListParameters().getPos(1)->getElemento();
-            if(routeStr[1]==':')
-            {
-                if(routeStr[2]=='/')
-                {
-                    this->mainRouteStr = routeStr;
-                }else{
-                    this->mainRouteStr +=routeStr;
-                }
-                }else{
-                    this->mainRouteStr +=routeStr;
+        listOut.EliminarPos(0);
+        if(getListParameters().getPos(1))
+        {
+            string routeStr = this->getListParameters().getPos(1)->getElemento();
+            if()
+        }else{
+            this->mainRouteStr = "C:/";
 
-            }
+        }
     }
     if(programStr == "cp"){
-        cp.copyFile("C:/");
+        listOut.EliminarPos(0);
+        if(getListParameters().getPos(1))
+        {
+        string routeStr = this->getListParameters().getPos(1)->getElemento();
+        if(ls.isDir(routeStr))
+        {
+           this->mainRouteStr = routeStr;
+        }
+        else{
+            routeStr = this->mainRouteStr +routeStr;
+            if(ls.isDir(routeStr))
+                this->mainRouteStr = routeStr;
+            else{
+
+            listOut.insertarFinal("No existe la ruta");
+            }
+        }
+        }else{
+            this->mainRouteStr = "C:/";
+        }
+        listOut = cp.copyFile("C:/","");
     }
     if(programStr == "date")
     {

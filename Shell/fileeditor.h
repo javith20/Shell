@@ -13,7 +13,7 @@ class fileEditor
 public:
     fileEditor();
     void presentaMenuGeneral();
-    int createFile(string name,string text);
+    int createFile(string name);
     int readFile(string name);
     int modifyFile();
 private :

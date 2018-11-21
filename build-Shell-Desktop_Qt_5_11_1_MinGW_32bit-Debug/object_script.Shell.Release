@@ -9,5 +9,7 @@ INPUT(
 ./release/cp.o
 ./release/date.o
 ./release/fileeditor.o
+./release/user.o
+./release/fileexists.o
 ./release/moc_mainwindow.o
 );

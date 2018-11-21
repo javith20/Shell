@@ -35,7 +35,8 @@ SOURCES += \
     cp.cpp \
     date.cpp \
     fileeditor.cpp \
-    user.cpp
+    user.cpp \
+    fileexists.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -47,7 +48,8 @@ HEADERS += \
     cp.h \
     date.h \
     fileeditor.h \
-    user.h
+    user.h \
+    fileexists.h
 
 FORMS += \
         mainwindow.ui
