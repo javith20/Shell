@@ -26,12 +26,7 @@ void ListaEnlazada<G>::insertarCabeza(G data)
     }
     tam++;
 }
-template<typename G>
-void ListaEnlazada<G>::vaciar()
-{
-    for (int indice=tam-1;indice>-1;indice--)
-        this->EliminarPos(indice);
-}
+
 template<typename G>
 void ListaEnlazada<G>::insertarFinal(G Dato)
 {
@@ -53,8 +48,8 @@ void ListaEnlazada<G>::insertarFinal(G Dato)
 template<typename G>
 int ListaEnlazada<G>::isVacia(){
     if(cabeza)
-        return 0;
-    return 1;
+        return 1;
+    return 0;
 }
 template<typename G>
 void ListaEnlazada<G>::insertarPos(G dato,int pos)
@@ -110,6 +105,13 @@ Nodo<G>* ListaEnlazada<G>::getPos(int pos)
 
     }
     return temp;
+}
+
+template<typename G>
+void ListaEnlazada<G>::vaciar()
+{
+    while(isVacia())
+        EliminarPos(0);
 }
 template<typename G>
 void ListaEnlazada<G>::EliminarPos(int pos)

@@ -18,57 +18,23 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>240</y>
-      <width>611</width>
-      <height>181</height>
+      <y>10</y>
+      <width>791</width>
+      <height>301</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="btnEnter">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>330</y>
+      <x>190</x>
+      <y>340</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QTreeView" name="treeView">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>0</y>
-      <width>541</width>
-      <height>191</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout"/>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>370</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
+     <string>Enter</string>
     </property>
    </widget>
   </widget>
@@ -78,7 +44,7 @@
      <x>0</x>
      <y>0</y>
      <width>806</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

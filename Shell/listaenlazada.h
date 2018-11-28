@@ -17,8 +17,8 @@ public:
     int getTam();
     Nodo<G>* getPos(int);
     void EliminarPos(int);
-    void vaciar();
     int isVacia();
+    void vaciar();
 private:
     Nodo<G> *cabeza;
     int tam;

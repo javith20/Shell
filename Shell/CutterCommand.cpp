@@ -127,10 +127,11 @@ string CutterCommand::selectCommand()
     }
     if(programStr == "clear")
     {
+        listOut.vaciar();
         listOut.insertarFinal("clear");
     }
     if(programStr == "exit")
-    {
+    {   listOut.vaciar();
         listOut.insertarFinal("exit");
     }
     if(programStr == "cd")
@@ -154,10 +155,16 @@ string CutterCommand::selectCommand()
         string routeFateStr =  ( this->getListParameters().getPos(2)->getElemento());
         cout << routeCopyStr << endl;
         cout << routeFateStr << endl;
-
         cp.copyFile(routeCopyStr,routeFateStr);
-
-
+    }
+    if(programStr == "mv"){
+        listOut.EliminarPos(0);
+        string routeCopyStr = ( this->getListParameters().getPos(1)->getElemento());
+        string routeFateStr =  ( this->getListParameters().getPos(2)->getElemento());
+        cout << routeCopyStr << endl;
+        cout << routeFateStr << endl;
+        cp.copyFile(routeCopyStr,routeFateStr);
+        rm.removeFile(routeCopyStr);
     }
     if(programStr == "date")
     {
